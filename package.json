@@ -10,7 +10,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.5.1",
+    "react-bootstrap": "^1.6.1",
     "react-cookie": "4.0.3",
     "react-cookies": "0.1.1",
     "react-dom": "^17.0.1",
@@ -41,5 +41,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This repository has starter code to begin work on creating your own online bookshelf.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshhaddock88/can-of-books-frontend.git"
+  },
+  "author": "Joshua Haddock, Steven Boston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshhaddock88/can-of-books-frontend/issues"
+  },
+  "homepage": "https://github.com/joshhaddock88/can-of-books-frontend#readme"
 }
