@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import IsLoadingAndError from './IsLoadingAndError';
 import Footer from './Footer';
+import { withAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,4 +32,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

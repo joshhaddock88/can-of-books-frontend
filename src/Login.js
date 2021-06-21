@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import './Login.css';
+import { withAuth0 } from '@auth0/auth0-react';
 
 class Login extends React.Component {
   render() {
@@ -19,4 +20,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withAuth0(Login);
