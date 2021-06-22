@@ -1,20 +1,24 @@
 # Can of Books
 
 **Authors**: Steven Boston, Joshua Haddock
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 0.2.1
 
 ## Overview
 
 Can of books is a wonderful application that allows you to create books via a cannery! Wow!
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Run a local server on 3001 to run this site. Make sure to install all depencies in package.json.
+[Link to server](https://github.com/Steven-Boston/can-of-books-api)
+
+Run React app with npm start.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-
+We desigend the site with industry standard modules and components. &copy;BostonHaddock industries is committed to creating scalable, customer focused solutions with minimal technology.
 
 ## Credit and Collaborations
+It's literally just the two of us.
 
 ## Collaborative Agreement
 
@@ -46,3 +50,4 @@ What will your team do if one person is taking over the project and not letting 
 - Being committed to utilizing pair programming in the intended manner and having a regular workflow of role switches will help alleviate this problem. 
 How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
 - Again, our planned workflow is both designed and optimized for us to learn from and support each other. 
+

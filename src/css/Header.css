@@ -1,0 +1,11 @@
+a{
+  color:#fff;
+}
+
+a:hover{
+  color:darkgrey;
+}
+
+nav.navbar-expand-lg{
+  justify-content: space-around;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import './Login.css';
+import '../css/Login.css';
 import { withAuth0 } from '@auth0/auth0-react';
 
 class Login extends React.Component {
