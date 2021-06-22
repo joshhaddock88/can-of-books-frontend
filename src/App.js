@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header';
-import BestBooks from './BestBooks';
-import Login from './Login.js';
-import IsLoadingAndError from './IsLoadingAndError';
-import Footer from './Footer';
+import Header from './components/Header';
+import BestBooks from './components/BestBooks';
+import Login from './components/Login.js';
+import IsLoadingAndError from './components/IsLoadingAndError';
+import Footer from './components/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
-import Profile from './Profile';
+import Profile from './components/Profile';
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,7 +42,7 @@ class App extends React.Component {
                 {isAuthenticated ? <Profile request={this.serverRequest}/> : ''}
               </Route>
             </Switch>
-            <Footer />
+            <Footer/>
           </IsLoadingAndError>
         </Router>
       </>
