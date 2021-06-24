@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import DeleteBook from './DeleteBook.js';
 import carouselBackground from '../images/carouselBackground.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/BestBooks.css';
@@ -8,7 +9,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 class BestBooks extends React.Component {
 
-  async componentDidMount() {
+  getBooks = async () => {
     const { getIdTokenClaims } = this.props.auth0;
     let tokenClaims = await getIdTokenClaims();
     const jwt = tokenClaims.__raw;
@@ -20,6 +21,16 @@ class BestBooks extends React.Component {
     console.log(bookData);
     this.setState({bookData: bookData.data});
   }
+
+  async componentDidMount() {
+    this.getBooks();
+  }
+
+  // newBooks = (newBookData) => {
+  //   this.setstate({
+  //     bookData: newBookData
+  //   });
+  // }
 
   render() {
     const {user} = this.props.auth0;
@@ -36,6 +47,11 @@ class BestBooks extends React.Component {
               <h3>{book.name}</h3>
               <p>{book.description}</p>
               <p>{book.status}</p>
+              <DeleteBook 
+                bookId = {book._id}
+                bookData = {this.state.bookData}
+                getBooks = {this.getBooks}
+              />
             </Carousel.Caption>
           </Carousel.Item>) : ''}
         </Carousel>
