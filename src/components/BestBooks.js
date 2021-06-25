@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 import DeleteBook from './DeleteBook.js';
 import carouselBackground from '../images/carouselBackground.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,9 +15,9 @@ class BestBooks extends React.Component {
     super(props);
     this.state = {
       showModal: false,
+      modalData: {}
     };
   }
-  
   getConfig = async() => {
     const { getIdTokenClaims } = this.props.auth0;
     let tokenClaims = await getIdTokenClaims();
@@ -39,10 +40,10 @@ class BestBooks extends React.Component {
     this.getBooks();
   }
 
-  toggleUpdateForm = () => {
+  toggleUpdateForm = (book) => {
     this.state.showModal ?
       this.setState({showModal: false}) :
-      this.setState({showModal: true});
+      this.setState({showModal: true, modalData: book});
   }
 
 
@@ -63,16 +64,10 @@ class BestBooks extends React.Component {
               <h3>{book.name}</h3>
               <p>{book.description}</p>
               <p>{book.status}</p>
-              <UpdateBookForm 
-                thisBook = {book}
-                bookId = {book._id}
-                bookData = {this.state.bookData}
-                getBooks = {this.getBooks}
-                toggleUpdateForm = {this.toggleUpdateForm}
-                showModal = {this.state.showModal}
-                getConfig = {this.getConfig}
-              />
-              <DeleteBook 
+              <Button
+                onClick = {() => this.toggleUpdateForm(book)}
+              >Update</Button>
+              <DeleteBook
                 bookId = {book._id}
                 bookData = {this.state.bookData}
                 getBooks = {this.getBooks}
@@ -80,6 +75,13 @@ class BestBooks extends React.Component {
             </Carousel.Caption>
           </Carousel.Item>) : ''}
         </Carousel>
+        <UpdateBookForm
+          getBooks = {this.getBooks}
+          toggleUpdateForm = {this.toggleUpdateForm}
+          showModal = {this.state.showModal}
+          getConfig = {this.getConfig}
+          modalData = {this.state.modalData}
+        />
       </>
     );
   }

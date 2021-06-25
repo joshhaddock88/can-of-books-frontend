@@ -8,6 +8,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 class UpdateBookForm extends React.Component {
 
   updateBook = async (e) => {
+    console.log(this.props.modalData);
     e.preventDefault();
     let config = await this.props.getConfig();
     let data = {
@@ -15,35 +16,31 @@ class UpdateBookForm extends React.Component {
       description: e.target.description.value,
       status: e.target.status.value
     };
-    console.log(data);
-    console.log(config);
-    console.log(this.props.bookId);
-    const responseData = await axios.put(`http://localhost:3001/books/${this.props.bookId}`, data, config);
+    const responseData = await axios.put(`http://localhost:3001/books/${this.props.modalData._id}`, data, config);
     console.log(responseData.data);
-    this.props.toggleUpdateForm();
+    this.props.toggleUpdateForm({});
     this.props.getBooks();
   };
 
   render() {
-    console.log('this book =',  this.props.thisBook);
+
     return (
       <>
-        <Button onClick={this.props.toggleUpdateForm}>Update</Button>
         <Modal
           show={this.props.showModal}
           onHide={this.props.toggleUpdateForm}>
           <Form onSubmit={this.updateBook}>
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
-              <Form.Control type='text' placeholder={this.props.thisBook.name}/>
+              <Form.Control type='text' defaultValue={this.props.modalData.name}/>
             </Form.Group>
             <Form.Group controlId='description'>
               <Form.Label>Summary</Form.Label>
-              <Form.Control as='textarea' rows={3}/>
+              <Form.Control as='textarea' rows={3} defaultValue={this.props.modalData.description}/>
             </Form.Group>
             <Form.Group controlId='status'>
               <Form.Label>Status</Form.Label>
-              <Form.Control />
+              <Form.Control defaultValue={this.props.modalData.status}/>
             </Form.Group>
             <Button type='submit'>Update</Button>
           </Form>
