@@ -1,7 +1,7 @@
 # Can of Books
 
 **Authors**: Steven Boston, Joshua Haddock
-**Version**: 0.2.1
+**Version**: 1.0.0 (Canary/Cannary Launch)
 
 ## Overview
 
@@ -15,7 +15,7 @@ Run a local server on 3001 to run this site. Make sure to install all depencies 
 Run React app with npm start.
 
 ## Architecture
-We desigend the site with industry standard modules and components. &copy;BostonHaddock industries is committed to creating scalable, customer focused solutions with minimal technology.
+We desigend the site with industry standard modules and components. &copy;BostonHaddock industries is committed to creating scalable, customer focused solutions with minimal technology and average to lower than average bugs.
 
 ## Credit and Collaborations
 It's literally just the two of us.

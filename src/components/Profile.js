@@ -22,7 +22,7 @@ class Profile extends React.Component {
   //   console.log(requestToken);
   // };
 
-  toggleForm = () => {
+  toggleAddForm = () => {
     this.state.showModal ?
       this.setState({showModal: false}) :
       this.setState({showModal: true});
@@ -49,7 +49,7 @@ class Profile extends React.Component {
             <Card.Text>
               {user.name}
             </Card.Text>
-            <Button onClick={this.toggleForm}>Add Book</Button>
+            <Button onClick={this.toggleAddForm}>Add Book</Button>
           </Card.Body>
         </Card>
         {this.state.showModal ?
