@@ -55,7 +55,7 @@ class Profile extends React.Component {
         {this.state.showModal ?
           <AddBookForm
             showModal = {this.state.showModal}
-            toggle = {this.toggleForm}
+            toggle = {this.toggleAddForm}
             getConfig = {this.getConfig}
           /> : ''}
       </>
